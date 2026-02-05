@@ -1,44 +1,3 @@
-// 1. Imports
-
-const express = require('express');
-const mongoose = require('mongoose');
-const app = express();
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-
-
-const SECRET = "supersecretkey"; 
-
-// 2. Middleware
-
-app.use(express.json());
-
-// 3. MongoDB connection
-
-mongoose.connect("mongodb://localhost:27017/todoapp")
-    .then(() => console.log("MongoDB connected"))
-    .catch(err => console.error("MongoDB connection error:", err));
-
-// 4. Define Models
-
-const userSchema = new mongoose.Schema({
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-    tasks: [
-        {
-            title: String,
-            date: String,
-            category: String,
-            completed: { type: Boolean, default: false }
-        }
-    ],
-    refreshTokens: [String],
-    isVerified: { type: Boolean, default: false }
-
-});
-const User = mongoose.model("User", userSchema);
-
-
 // 5. Routes
 
 
@@ -293,23 +252,3 @@ app.delete('/tasks/:id', authMiddleware, async (req, res) => {
         res.status(500).json({ message: "Server error", error: err.message });
     }
 });
-
-
-function authMiddleware(req, res, next) {
-    const authHeader = req.headers['authorization'];
-    if (!authHeader) return res.status(401).json({ message: "No token provided" });
-
-    const token = authHeader.split(' ')[1];
-    try {
-        const decoded = jwt.verify(token, SECRET);
-        req.user = decoded; // attach user info
-        next();
-    } catch (err) {
-        return res.status(403).json({ message: "Invalid or expired token" });
-    }
-}
-
-
-// 6. Start server
-
-app.listen(5000, () => console.log("Server running on http://localhost:5000"));
