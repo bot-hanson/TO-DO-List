@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Expense_Tracker.Properties
+namespace Monthly_Expense_Tracker.Properties
 {
 
 

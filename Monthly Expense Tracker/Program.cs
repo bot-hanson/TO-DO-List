@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Expense_Tracker
+namespace Monthly_Expense_Tracker
 {
     internal static class Program
     {

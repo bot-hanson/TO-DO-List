@@ -21,7 +21,9 @@ class Program
 
             Console.Write($"Enter cost for {item}: ");
             double cost = double.Parse(Console.ReadLine());
-            expenses.Add((item, cost)); // This adds the expense item to list
+
+            // This adds the expense item to list
+            expenses.Add((item, cost)); 
         }
 
         // This calculates the total expenses

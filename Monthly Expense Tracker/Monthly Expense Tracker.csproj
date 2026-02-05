@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BC4F0FEF-280C-465D-BA87-272CB4726895}</ProjectGuid>
+    <ProjectGuid>{B221275C-88B5-4E07-9249-315AA327702A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Expense_Tracker</RootNamespace>
-    <AssemblyName>Expense Tracker</AssemblyName>
+    <RootNamespace>Monthly_Expense_Tracker</RootNamespace>
+    <AssemblyName>Monthly Expense Tracker</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
