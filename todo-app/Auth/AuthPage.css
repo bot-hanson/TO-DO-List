@@ -1,0 +1,17 @@
+.auth-page {
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+    .auth-page.left .right-panel {
+        flex: 0.4;
+    }
+
+    .auth-page.right .left-panel {
+        flex: 0.4;
+    }
+
+.left-panel, .right-panel {
+    flex: 1;
+    transition: flex 0.3s ease;
+}
